@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="./fontawesome-free-5.15.3/css/all.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="signin" id="signin">
+            <h2 class="signin__heading">WELL COME TO MY LOVE</h2>
+            <p class="signin__something">we can write something in this field like quoets.</p>
+            <form action="#" class="signin_form">
+                <div class="form__group" >
+                    <i class="form__group-icon far fa-user"></i>
+                    <input type="text" class="form__group-input" placeholder="Username">
+                </div>
+                <div class="form__group password-field">
+                    <i  class="form__group-icon fas fa-unlock-alt" ></i>
+                    <input type="password" id="input-password" class="form__group-input" placeholder="Password">
+                    <button class="btn btn-non-outline" id="btn-hide">
+                        <i id="eye-icon" class="fas fa-eye" style="color: #8A3DCF;"></i>
+                    </button>
+                </div>
+            </form>
+            <div class="signin__submit">
+                <button class="btn-submit" id="btn-login">LOGIN</button>
+                <button class="btn-submit" id="btn-signup">SIGN UP</button>
+            </div>
+        </div>
+        <div class="signup" id="signup" style="opacity: 0">
+            <h2 class="signup__heading">LET CREATE A ACCOUT</h2>
+            <p class="signup__something">If you already have an account.<button class="btn"id="click-signin">Sign in.</button></p>
+            <form action="#" class="signup__form">
+                <div class="signup__form-name">
+                    <div class="form__group" >
+                        <input type="text" class="form__group-input" placeholder="First Name">
+                    </div>
+                    <div class="form__group" >
+                        <input type="text" class="form__group-input" placeholder="Last Name">
+                    </div>
+                </div>
+                <div class="form__group" >
+                    <i class="form__group-icon far fa-envelope-open"></i>
+                    <input type="text" class="form__group-input" placeholder="Email">
+                </div>
+                <div class="form__group" >
+                    <i class="form__group-icon far fa-user"></i>
+                    <input type="text" class="form__group-input" placeholder="Username">
+                </div>
+                <div class="form__group password-field">
+                    <i  class="form__group-icon fas  fa-unlock-alt" ></i>
+                    <input type="password" id="input-password-1" class="form__group-input" placeholder="Password">
+                    <button class="btn btn-hide btn-non-outline" id="btn-hide-1">
+                        <i id="eye-icon-1" class="fas fa-eye" style="color: #8A3DCF;"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div id="image-up" name="1"></div>
+    </div>
+    <script>
+        let inputPass = document.getElementById('input-password');
+        let btnHide = document.getElementById('btn-hide');
+        let iconEye = document.getElementById('eye-icon');
+        let inputPass1 = document.getElementById('input-password-1');
+        let btnHide1 = document.getElementById('btn-hide-1');
+        let iconEye1 = document.getElementById('eye-icon-1');
+        let imageUp = document.getElementById('image-up');
+        let signIn = document.getElementById('signin');
+        let btnSignup = document.getElementById('btn-signup');
+        let clSignin = document.getElementById('click-signin');
+        let signUp = document.getElementById('signup');
+        let container = document.getElementById('container');
+        btnSignup.addEventListener('click',function() {
+                imageUp.classList.remove('moveRight');
+                imageUp.classList.add('moveLeft');
+                signIn.setAttribute('style','opacity:0');
+                setTimeout(function() {
+                    signUp.setAttribute('style','opacity:1');
+                },600);
+                container.classList.add('gradient-container');
+        });
+
+        clSignin.addEventListener('click',function() {
+            imageUp.classList.remove('moveLeft');
+            imageUp.classList.add('moveRight');
+            setTimeout(function() {
+                signIn.setAttribute('style','opacity:1');
+            },600);
+            signUp.setAttribute('style','opacity:0')
+            container.classList.remove('gradient-container');
+        });
+
+        btnHide.addEventListener("click", function() {
+            let currType = inputPass.getAttribute('type');
+            if(currType === 'password') {
+                inputPass.setAttribute('type','text');
+                iconEye.setAttribute('class','fas fa-eye-slash')
+            }
+            else {
+                inputPass.setAttribute('type','password');
+                iconEye.setAttribute('class','fas fa-eye')
+            }
+        }); 
+        btnHide1.addEventListener("click", function() {
+            let currType = inputPass1.getAttribute('type');
+            if(currType === 'password') {
+                inputPass1.setAttribute('type','text');
+                iconEye1.setAttribute('class','fas fa-eye-slash')
+            }
+            else {
+                inputPass1.setAttribute('type','password');
+                iconEye1.setAttribute('class','fas fa-eye')
+            }
+        }); 
+    </script>
+</body>
+</html>

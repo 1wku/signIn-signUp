@@ -1,0 +1,230 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    background-color: #F7F3EB;
+    font-family: 'Poppins', sans-serif;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    margin: 0;
+    padding-top: 18rem;
+    background-image: linear-gradient(to right bottom,#97d9ff, #e1f7ec)
+}
+
+.container {
+    margin:  auto;
+    max-width: 140rem;
+    display: flex;
+    border-radius: 2rem;
+    box-shadow: 1rem 1rem 2rem rgb(39, 39, 39);
+    position: relative;
+    z-index: 1;
+    background-image: linear-gradient(to top,#0F93FB,#60B7FC);
+    transition: background-image 0.4s ease-out;
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        height: 100%;
+        width: 100%;
+        border-radius: inherit;
+        opacity: 0.7;
+        // background-image: linear-gradient(to top,#0F93FB,#60B7FC);
+        z-index: -1;
+    }
+}
+#signin {
+    transition: all 0.3s ease;
+
+}
+.signin {  
+    border-radius:  1.5rem 0 0 01.5rem ; 
+    width: 50%;
+    padding:7rem 10rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    &__heading {
+        color: #fff;
+        padding-bottom: 3rem ;
+        font-size: 3.5rem;
+        font-weight: bold;
+    }
+    &__something {
+        color: #fff;
+        padding: 0.5rem;
+        font-size:1.5rem;
+        font-weight: 300;
+        margin-bottom: 3rem;
+    }
+    &__submit {    
+        width: 100%; 
+        display: flex;
+        justify-content: space-around;
+    }
+}
+.signin_form {
+    width: 100%;
+    margin-bottom:2rem;
+}
+
+.form__group {
+    margin-bottom: 2rem;
+    position: relative;
+    &-input {
+        font-size: 1.7rem;
+        width: 100%;
+        outline: none;
+        padding: 1.5rem 5rem;
+        outline: none;
+        border: 0 solid transparent;
+        border-radius: 0.6rem;
+        transition: all 0.5s ease;
+        
+        &::placeholder {
+           font-weight: 400;
+        }
+        &:focus {
+            background-color: #fff;
+        }
+    }
+    &-icon {
+        top: 50%;
+        transform: translate(50%,-50%);
+        color: #0F93FB;
+        position: absolute;
+        font-size: 2.5rem;
+        opacity: 0.8;
+    }
+}
+.password-field {
+    position: relative;
+}
+.btn-non-outline {
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1rem;
+    position: absolute;
+}
+.btn {
+    outline: none;
+    border-color: transparent;
+    background-color: transparent;
+    &-submit {
+        cursor: pointer;
+        font-weight: 600;
+        color: #F7F3EB;
+        font-size: 1.7rem;
+        border-radius:  1.5rem;
+        padding: 2rem;
+        min-width: 20rem;
+        border: 0 solid transparent;
+        outline: none;
+        background-image: linear-gradient(to right bottom,#FEBE91,#FF764A);
+        box-shadow: 1rem 1rem 3rem #0d275049;
+        transition: all 0.2s ease;
+        &:active {
+            box-shadow: 1rem 1rem 1rem #0d275049;
+            opacity: 0.9;
+        }
+    }
+}
+
+.signup {
+    width: 50%;
+    padding:7rem 10rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transition: all 0.2s ease;
+    &__heading {
+        color: #fff;
+        padding-bottom: 3.5rem ;
+        font-size: 3rem;
+        font-weight: bold;
+    }
+    &__something {
+        color: #fff;
+        padding: 0.5rem;
+        font-size:1.5rem;
+        font-weight: 300;
+        margin-bottom: 3rem;
+    }
+    &__form {
+        width: 100%;
+    
+        &-name {
+            width: 100%;
+            display: flex;
+            &>div{
+                width: 47%;
+                &+div {
+                    margin-left: 6%;
+                }
+                &>input {
+                    padding: 1.5rem 3rem;
+                }
+            }
+        }
+    }
+    &>p>button {
+        color: #fff;
+        font-family: 'Poppins';
+        color: #004b28;
+    }
+}
+
+#click-signin {
+    text-decoration: none;
+}
+#image-up {
+    background-image: url(https://cdn.dribbble.com/users/1138006/screenshots/12920839/media/9241b0312a510b08759bd22effcfcdbc.png?compress=1&resize=1000x750);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 110%;
+    top: 0;
+    right: 0;
+    content: " ";
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    border-radius: inherit;
+    transition: all 0.2s ease;
+}
+
+
+.image-left {
+    left: 0;
+}
+
+@keyframes moveLeft {
+    0% {right: 0;}
+    80% {right:50.5%}
+    100% {right:50%;}
+}
+@keyframes moveRight{
+    0% {right: 50%;}
+    80% {right:-0.5%;}
+    100% {right:0;}
+}
+.moveLeft {
+    animation-name: moveLeft;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+
+}
+.moveRight {
+    animation-name: moveRight;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.gradient-container {
+    // background-image: linear-gradient(to bottom,#38a2d6 ,#551138);
+}
