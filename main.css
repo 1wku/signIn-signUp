@@ -17,8 +17,9 @@ body {
 }
 
 .container {
+  max-width:140rem;
+  min-width: 1400px;
   margin: auto;
-  max-width: 140rem;
   display: flex;
   border-radius: 2rem;
   box-shadow: 1rem 1rem 2rem #272727;
